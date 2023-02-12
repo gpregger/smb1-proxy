@@ -1,4 +1,4 @@
-FROM dperson/samba:amd64
+FROM --platform=linux/amd64 servercontainers/samba:latest
 
 RUN apk add --no-cache --update --upgrade \
     cifs-utils \
