@@ -60,8 +60,7 @@ RUN addgroup -S smb && \
     echo '' >>$file && \
     rm -rf /tmp/*
 
-RUN wget https://raw.githubusercontent.com/dperson/samba/master/samba.sh -P /usr/bin/ && \
-    chmod +x /usr/bin/samba.sh
+COPY samba.sh /usr/bin
 
 COPY ./supervisord.conf /etc/supervisord.conf
 COPY ./watcher.py /watcher.py
