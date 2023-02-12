@@ -16,3 +16,4 @@ HEALTHCHECK --interval=30s --timeout=15s --start-period=5s --retries=3 \
 # Docker Entrypoint
 COPY ./docker-entrypoint.py /docker-entrypoint.py
 ENTRYPOINT ["python3", "-u", "/docker-entrypoint.py"]
+
