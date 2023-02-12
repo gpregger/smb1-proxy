@@ -61,6 +61,7 @@ RUN addgroup -S smb && \
     rm -rf /tmp/*
 
 COPY samba.sh /usr/bin
+RUN chmod +x /usr/bin/samba.sh
 
 COPY ./supervisord.conf /etc/supervisord.conf
 COPY ./watcher.py /watcher.py
