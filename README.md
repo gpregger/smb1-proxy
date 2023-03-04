@@ -1,3 +1,10 @@
+## Forker's note ##
+My usecase: Allow my crappy HP printer to Scan to Network folder without having to enable SMB1 on my main NAS.
+I realized I could just use a separate smb1 server for my usecase instead of a "proper proxy" as I technically don't need to forward my files via SMB, but can instead use a docker volume. So this repo while functional - for my usecase - it has some undesirable/scuffed workarounds.
+If this container were to run on separate hardware it would make more sense, but as I ran it as a container on my TrueNAS SCALE, I now just use a Docker volume to "forward" the file received via SMB1.
+"Enjoy" at your own risk... It will probably be removed relatively soon...
+
+
 # smb1-proxy #
 
 [![](https://img.shields.io/docker/v/andre74/smb1-proxy?sort=semver)](https://hub.docker.com/r/andre74/smb1-proxy/tags)
