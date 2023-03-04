@@ -75,4 +75,5 @@ HEALTHCHECK --interval=30s --timeout=15s --start-period=5s --retries=3 \
 
 # Docker Entrypoint
 COPY ./docker-entrypoint.py /docker-entrypoint.py
+COPY ./remove_bad_route.sh /remove_bad_route.sh
 ENTRYPOINT ["python3", "-u", "/docker-entrypoint.py"]
