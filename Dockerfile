@@ -72,9 +72,11 @@ EXPOSE 137/udp 138/udp 139 445
 COPY ./docker-healthcheck.py /docker-healthcheck.py
 HEALTHCHECK --interval=30s --timeout=15s --start-period=5s --retries=3 \
     CMD ["python3", "-u", "/docker-healthcheck.py"]
+    
+# Remove bad route
+COPY ./remove_bad_route.sh /remove_bad_route.sh
+RUN chmod +x /remove_bad_route.sh
 
 # Docker Entrypoint
 COPY ./docker-entrypoint.py /docker-entrypoint.py
-COPY ./remove_bad_route.sh /remove_bad_route.sh
 ENTRYPOINT ["python3", "-u", "/docker-entrypoint.py"]
-
