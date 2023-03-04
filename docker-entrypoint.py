@@ -2,6 +2,8 @@
 
 import os, subprocess
 
+removeBadRoute = (os.getenv('RMBR', 'False') == 'True')
+
 linuxUserId = os.getenv('USERID')
 linuxGroupId = os.getenv('GROUPID')
 sambaUsername = os.getenv('SAMBA_USERNAME')
@@ -9,6 +11,9 @@ sambaPassword = os.getenv('SAMBA_PASSWORD')
 
 totalProxyCount = 0
 enabledProxyCount = 0
+
+if removeBadRoute:
+  subprocess.call('/remove_bad_route.sh')
 
 i = 0
 while True:
